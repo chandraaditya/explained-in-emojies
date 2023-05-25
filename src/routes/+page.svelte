@@ -60,7 +60,7 @@
           </button>
         </div>
         <div class="w-full">
-          <p bind:this={output} class="text-center font-semibold text-2xl">😀😀😀</p>
+          <p bind:this={output} class="text-center font-semibold text-6xl">😀😀😀</p>
         </div>
     </div>
   </div>
