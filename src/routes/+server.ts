@@ -30,7 +30,7 @@ async function getOpenAIResponse(message: string): Promise<string> {
     const completion = await openai.createChatCompletion({
       model: 'gpt-3.5-turbo',
       messages: [
-        {role: ChatCompletionRequestMessageRoleEnum.System, content: 'Your job is to explain the topic the best you can ONLY using emojis. Explain everything clearly and use as many emojis as required. Do not include any other text.' },
+        {role: ChatCompletionRequestMessageRoleEnum.System, content: 'You will respond to any message from the user using only emojis explaining the topic of the message. Explain everything clearly and use as many emojis as required. Do not include any other text.' },
         {role: ChatCompletionRequestMessageRoleEnum.User, content: mToSend}
       ]
     });
