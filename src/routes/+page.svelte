@@ -1,5 +1,6 @@
 <script lang="ts">
   import Send from "svelte-material-icons/Send.svelte";
+  import ContentCopy from "svelte-material-icons/ContentCopy.svelte";
 
   let loading = false;
 
@@ -43,6 +44,10 @@
     unlockElements();
   }
 
+  function copyOutputToClipboard() {
+    navigator.clipboard.writeText(output.innerText);
+  }
+
 </script>
 
 <form on:submit|preventDefault={getResponse}>
@@ -62,6 +67,11 @@
         <div class="w-full">
           <p bind:this={output} class="text-center font-semibold text-6xl">😀😀😀</p>
         </div>
+        <button class="flex flex-row items-center justify-center border-2 rounded-full px-4 py-2" on:click={copyOutputToClipboard}>
+          <p>Copy</p>
+          <div class="w-1"></div>
+          <ContentCopy></ContentCopy>
+        </button>
     </div>
   </div>
 </form>
